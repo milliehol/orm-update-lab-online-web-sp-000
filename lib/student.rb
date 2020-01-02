@@ -34,10 +34,10 @@ attr_reader :id
     @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0]
   end
  
-  def self.create(name:, album:)
-    song = Song.new(name, album)
-    song.save
-    song
+  def self.create(name:, grade:)
+    student = Student.new(name, grade)
+    student.save
+    student
   end
  
   def self.find_by_name(name)
