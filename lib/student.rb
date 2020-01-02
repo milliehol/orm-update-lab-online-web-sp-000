@@ -62,7 +62,7 @@ attr_reader :id
     student
   end
   
-    def update
+  def update
     sql = <<-SQL
       UPDATE students
       SET name = ?, grade = ?
