@@ -50,6 +50,13 @@ attr_reader :id
     Student.new(result[0], result[1], result[2])
   end
   
+   def self.drop_table
+    sql = <<-SQL
+      DROP TABLE students
+    SQL
+    DB[:conn].execute(sql)
+  end
+  
   def self.new_from_db(row)
     student = self.new(row[1], row[2], row[0])
     student
