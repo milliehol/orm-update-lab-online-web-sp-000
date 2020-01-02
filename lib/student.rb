@@ -50,6 +50,11 @@ attr_reader :id
     Student.new(result[0], result[1], result[2])
   end
   
+  def self.new_from_db(row)
+    student = self.new(row[1], row[2], row[0])
+    student
+  end
+  
     def update
     sql = <<-SQL
       UPDATE students
